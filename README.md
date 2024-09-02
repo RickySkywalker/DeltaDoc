@@ -34,6 +34,23 @@ singularity exec -B /projects:/projects /sw/user/NGC_containers/pytorch_24.07-py
 The ```-B``` means we mount the ```/projects``` directory (where most of the files and model ckpts belongs) to the working directory of the container. Otherwise, the container cannot read anything in the directory
 
 
-### Run your Python code in DeltaAi torch-cuda version of python
+### Run your Python code in DeltaAI torch-cuda version of python
 
 ```bash
+module load python/miniforge3_pytorch
+python main.py
+```
+
+### Install of Flash-Attention
+DeltaAI’s machines are with aarch64 architecture. For flash-attention, users need to compile from source code locally.
+```bash
+git clone https://github.com/Dao-AILab/flash-attention.git
+cd flash-attention
+mkdir -p ~/bin
+ln -s /usr/bin/gcc-12 ~/bin/c++
+ln -s /usr/bin/gcc-12 ~/bin/gcc
+export PATH=~/bin:$PATH
+# check gcc --version and c++ --version, should be 12.3
+srun --account=bckr-dtai-gh --partition=ghx4-interactive   --nodes=1 --gpus-per-node=1 --tasks=1 --tasks-per-node=1   --cpus-per-task=16 --mem=256g --time=00:59:00   --pty bash
+MAX_JOBS=16  python setup.py install
+```
