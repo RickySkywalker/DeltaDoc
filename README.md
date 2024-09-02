@@ -18,7 +18,22 @@ We recommend installing the environment in the home folder, use ```wget https://
 
 
 
-### Running in interactive shell
+### Running in the interactive shell
 ```bash
 srun --account=bckr-dtai-gh --partition=ghx4-interactive   --nodes=1 --gpus-per-node=4 --tasks=1 --tasks-per-node=1   --cpus-per-task=16 --mem=128g --time=3:00:00   --pty bash
 ```
+
+### Run your code in the interactive shell in NGC container
+
+Firstly, activate your env through ```conda activate xxx```
+
+Then, execute the program in the NGC container
+```bash
+singularity exec -B /projects:/projects /sw/user/NGC_containers/pytorch_24.07-py3.sif python main.py
+```
+The ```-B``` means we mount the ```/projects``` directory (where most of the files and model ckpts belongs) to the working directory of the container. Otherwise, the container cannot read anything in the directory
+
+
+### Run your Python code in DeltaAi torch-cuda version of python
+
+```bash
