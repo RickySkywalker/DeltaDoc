@@ -37,6 +37,7 @@ The ```-B``` means we mount the ```/projects``` directory (where most of the fil
 
 ### Run your Python code in DeltaAI torch-cuda version of python
 
+The DeltaAI provided their own version of PyTorch that can interact correctly with GPUs. You can use it through below commands
 ```bash
 module load python/miniforge3_pytorch
 python main.py
