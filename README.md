@@ -11,6 +11,7 @@ We are in the group ```bckr```, so every folder, we should find the ```bckr``` t
 | PROJECTS | ```/projects/bckr/your_id``` | **500GB** | most of codes and checkpoints in it |
 | WORK-HDD | ```/work/hdd/bckr/your_id``` | **(by official doc) 1000GB (in real 100GB)** | Can be increased to 100T at most by request |
 | ```/tmp``` | ```/tmp``` | **~4T** | If there is a large amount of tmp files, set the tmp folder to here, after each process, it will be deleted |
+| ```/work/nvme/bckr``` | **10T** | This is a large folder that
 
 
 ## Setup Envs
