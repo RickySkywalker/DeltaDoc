@@ -30,7 +30,7 @@ Firstly, activate your env through ```conda activate xxx```
 
 Then, execute the program in the NGC container
 ```bash
-singularity exec -B /projects:/projects /sw/user/NGC_containers/pytorch_24.07-py3.sif python main.py
+exec -B /projects:/projects -B /work/nvme:/work/nvme /sw/user/NGC_containers/pytorch_24.07-py3.sif python main.py
 ```
 The ```-B``` means we mount the ```/projects``` directory (where most of the files and model ckpts belongs) to the working directory of the container. Otherwise, the container cannot read anything in the directory
 
