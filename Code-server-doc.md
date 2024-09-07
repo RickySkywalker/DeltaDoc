@@ -4,6 +4,10 @@ This is the documentation for code-server on Delta and DeltaAI.
 
 **Note: you should do all the work on your terminal that is NOT in VS code, VS code terminal may have some problem**
 
+## Running code-server scripts on DeltaAI
+
+There are scripts that can directly help you setup everything on DeltaAI Login nodes, please check [this link](https://github.com/RickySkywalker/DeltaDoc/tree/main/code-server_scripts).
+
 ## Start code-server on login node
 You can try to firstly init the code-server on login node to test if it works correctly
 
