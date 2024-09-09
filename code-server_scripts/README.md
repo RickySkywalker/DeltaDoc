@@ -1,5 +1,5 @@
 # Running code-server using scripts
-This folder contains all the scripts that help you run code-server on Delta and DeltaAI
+This folder contains all the scripts that help you run code-server on Delta using interactive shell
 
 ## Running code-server on DeltaAI
 
